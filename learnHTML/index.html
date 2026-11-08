@@ -1,10 +1,77 @@
+<!-- Tells the browser this is a Modern HTML5 document. Always the first line-->>
 <!DOCTYPE html>
-<html>
+<!-- <html> wraps the whole page. lang="en" says the content is in English
+     (helps screen readers and search engines). -->
+<html lang="en">
+    
+<!-- <head> holds information ABOUT the page. None of it appears on the page itself. -->
 <head>
+    <!-- Sets the character encoding so emojis and special characters display correctly. -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page scale properly on phones. Without it, mobile browsers
+    show a tiny zoomed-out desktop version. -->
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+
+    <!-- Text shown on the browser tab-->
     <title>Tanishq Sharma</title>
+
+    <!-- <style> is where CSS lives. CSS controls how things LOOK.
+    Each rule has the form:  selector { property: value; } -->
+    <style>
+
+    /* body is a selector that targets the <body element> */
+    body {
+        margin: 0; /* Removes the default white gap around page edges*/
+        background-color: #ae9a7f; /*the Tan color: rrggbb is a hex color code*/
+        color: #1a1a1a; /*Default text color: a soft black*/
+        font-family: Georgia, serif; /*Font to use*/
+        line-height: 1.7; /*Space between lines of text (1.7 X font size)*/
+
+    }
+
+    /*.cover targets any element with class="cover". A dot means class */
+    .cover {
+        display: block; /*Images are inline by default, which leaves a gap underneath. Block removes it*/
+        width: 100%; /*Stretch across the full width of the window*/
+        
+        /* clamp(min, preferred, max) picks a value between min and max.
+        33vw = 33% of the window width, which keeps the banner's 3:1 shape.
+        It never gets shorter than 160px or taller than 420px. */
+        height: clamp(160px, 33vw, 420px);
+
+        /* If the box shape differs from the image shape, "cover" crops the image
+        to fill the box instead of squashing it. */
+        object-fit: cover;
+        object-position: center; /* When cropping, keep the center of the image. */
+
+        /* Drop shadow: x-offset y-offset blur color.
+        rgba(...) is a color with transparency; 0.35 means 35% visible. */
+        box-shadow: 0 6px 20px rgba(0,0,0, 0.35);
+    }
+
+
+    /*A centred column that holds all the text*/
+    .content {
+        max-width: 760px; /* Never wider than 760px, so lines stay readable. */
+        margin: 0 auto;  /* Top/bottom margin 0; left/right "auto" = centered. */
+        padding: 40px 24px 60px; /*Inner Space: top left/right, bottom. */
+        text-align: center; /*Center the text inside*/
+    }
+
+    </style>
+    
     <style>
     a { text-decoration: none; }
 </style>
+
+<style>
+        body {
+            background-color: #ae9a7f;
+            color: #1a1a1a;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -15,7 +82,7 @@
        <br>
         My main tech stacks include Python, streamlit, Tensorflow, Keras, MatplotLib, Pandas, Numpy, etc.
         <br>
-        I've also worked with technologies like git and docker as well.     
+        I've also worked with technologies like Git, Docker, Kubernetes, and AWS.     
     </p>
     <h3>Find me Online</h3>
     
@@ -24,7 +91,11 @@
     </a>
     
     <a href="https://linkedin.com/in/tvnisxq" target="_blank" title="LinkedIn">
-    <img src="linkedin.svg" width="32" height="32" alt="LinkedIn"></a>
+    <img src="linkedin.svg" width="32" height="32" alt="LinkedIn" style="margin-right: 10px"></a>
+
+    <a href ="https://youtube.com/@tensharq" target="_blank" title="YouTube">
+        <img src="youtube.svg.webp" width="38" height="32" alt="YouTube" style="margin-right: 10px;">
+    </a>
 
     
 </body>
