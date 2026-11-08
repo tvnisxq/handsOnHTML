@@ -1,139 +1,136 @@
-<!-- Tells the browser this is a Modern HTML5 document. Always the first line-->>
 <!DOCTYPE html>
+<!-- Tells the browser this is a modern HTML5 document. Must be the first line. -->
+
 <!-- <html> wraps the whole page. lang="en" says the content is in English
      (helps screen readers and search engines). -->
 <html lang="en">
-    
+
 <!-- <head> holds information ABOUT the page. None of it appears on the page itself. -->
 <head>
     <!-- Sets the character encoding so emojis and special characters display correctly. -->
     <meta charset="UTF-8">
 
     <!-- Makes the page scale properly on phones. Without it, mobile browsers
-    show a tiny zoomed-out desktop version. -->
-    <meta name="viewport" content="width=device-width, intial-scale=1">
+         show a tiny zoomed-out desktop version. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Text shown on the browser tab-->
+    <!-- Text shown on the browser tab -->
     <title>Tanishq Sharma</title>
 
     <!-- <style> is where CSS lives. CSS controls how things LOOK.
-    Each rule has the form:  selector { property: value; } -->
+         Each rule has the form:  selector { property: value; } -->
     <style>
 
-    /* body is a selector that targets the <body element> */
-    body {
-        margin: 0; /* Removes the default white gap around page edges*/
-        background-color: #ae9a7f; /*the Tan color: rrggbb is a hex color code*/
-        color: #1a1a1a; /*Default text color: a soft black*/
-        font-family: Georgia, serif; /*Font to use*/
-        line-height: 1.7; /*Space between lines of text (1.7 X font size)*/
-
-    }
-
-    /*.cover targets any element with class="cover". A dot means class */
-    .cover {
-        display: block; /*Images are inline by default, which leaves a gap underneath. Block removes it*/
-        width: 100%; /*Stretch across the full width of the window*/
-        
-        /* clamp(min, preferred, max) picks a value between min and max.
-        33vw = 33% of the window width, which keeps the banner's 3:1 shape.
-        It never gets shorter than 160px or taller than 420px. */
-        height: clamp(160px, 33vw, 420px);
-
-        /* If the box shape differs from the image shape, "cover" crops the image
-        to fill the box instead of squashing it. */
-        object-fit: cover;
-        object-position: center; /* When cropping, keep the center of the image. */
-
-        /* Drop shadow: x-offset y-offset blur color.
-        rgba(...) is a color with transparency; 0.35 means 35% visible. */
-        box-shadow: 0 6px 20px rgba(0,0,0, 0.35);
-    }
-
-
-    /*A centred column that holds all the text*/
-    .content {
-        max-width: 760px; /* Never wider than 760px, so lines stay readable. */
-        margin: 0 auto;  /* Top/bottom margin 0; left/right "auto" = centered. */
-        padding: 40px 24px 60px; /*Inner Space: top left/right, bottom. */
-        text-align: center; /*Center the text inside*/
-    }
-
-    /* A selector can list several elements; here we style <h1> separately from <h2>. */
-    h1 {
-        color: #004d26; /*Dark green to match the cover*/
-        margin-bottom: 0; /*Pull the h2 closer underneath*/
-    }
-    h2 {
-        font-weight: normal; /*Headings are bold by default: this turns them off*/
-        margin-top: 4px; 
-    }
-
-    /* The row that holds the social icons. */
-    .socials {
-        display: flex; /* Flexbox: lays children out in a row and gives us tools for alignment and spacing. */
-        justify-content: center; /*Center the icons horizontally*/
-        align-items: center; /*Line them up vertically in the middle*/ 
-        gap: 20px; /*Space between the icons*/
-        margin-top: 16px;
-    }
-    
-    /*".socials img" means "any <img> INSIDE an element with class socials".*/
-    .socials img {
-        width: 36px;
-        height: 36px;
-        transition: transform 0.2s;       /* Animate any change to "transform" over 0.2 seconds. */
-    }
-
-    /*.hover only applies when the mouse is over that element*/
-    .socials img:hover {
-        transform: translateY(-4px);      /* Move up 4px (negative Y = up), giving a "lift" effect. */
-    }
-    /* Removes the underline from all links. */
-    
-    a {
-        text-decoration: none;
-    }
-    </style>
-</head>
-    
-    <!-- <style>
-    a { text-decoration: none; }
-</style> -->
-
-
-<style>
+        /* body is a selector that targets the <body> element */
         body {
-            background-color: #ae9a7f;
-            color: #1a1a1a;
+            margin: 0;                    /* Removes the default white gap around page edges */
+            background-color: #ae9a7f;    /* The tan color: #rrggbb is a hex color code */
+            color: #1a1a1a;               /* Default text color: a soft black */
+            font-family: Georgia, serif;  /* Font to use */
+            line-height: 1.7;             /* Space between lines of text (1.7 x font size) */
+        }
+
+        /* .cover targets any element with class="cover". A dot means class. */
+        .cover {
+            display: block;               /* Images are inline by default, which leaves a gap underneath. Block removes it */
+            width: calc(100% - 50px);     /* Full width minus 50px (25px of space on each side) */
+            max-width: 900px;             /* Never wider than this, so it stays sharp */
+            height: auto;                 /* Keep the original proportions, no cropping */
+            margin: 24px auto 0;          /* 24px above, auto left/right = centered */
+            border-radius: 12px;          /* Softly rounded corners */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);  /* x-offset y-offset blur color */
+        }
+
+        /* A centered column that holds all the text */
+        .content {
+            max-width: 760px;             /* Never wider than 760px, so lines stay readable */
+            margin: 0 auto;               /* Top/bottom 0; left/right auto = centered */
+            padding: 40px 24px 60px;      /* Inner space: top, left/right, bottom */
+            text-align: center;           /* Center the text inside */
+        }
+
+        /* A selector can target elements by tag name; here <h1> and <h2> get separate styles. */
+        h1 {
+            color: #004d26;               /* Dark green to match the cover */
+            margin-bottom: 0;             /* Pull the h2 closer underneath */
+        }
+        h2 {
+            font-weight: normal;          /* Headings are bold by default; this turns it off */
+            margin-top: 4px;
+        }
+
+        /* The row that holds the social icons */
+        .socials {
+            display: flex;                /* Flexbox: lays children out in a row with alignment and spacing tools */
+            justify-content: center;      /* Center the icons horizontally */
+            align-items: center;          /* Line them up vertically in the middle */
+            gap: 20px;                    /* Space between the icons */
+            margin-top: 16px;
+        }
+
+        /* ".socials img" means "any <img> INSIDE an element with class socials" */
+        .socials img {
+            width: 36px;
+            height: 36px;
+            transition: transform 0.2s;   /* Animate changes to "transform" over 0.2 seconds */
+        }
+
+        /* :hover only applies while the mouse is over that element */
+        .socials img:hover {
+            transform: translateY(-4px);  /* Move up 4px (negative Y = up) for a "lift" effect */
+        }
+
+        /* Removes the underline from all links */
+        a {
+            text-decoration: none;
         }
     </style>
-
 </head>
 
+<!-- <body> holds everything visible on the page. -->
 <body>
-    <img src="pfp-removebg-preview.png" height="200" alt="Profile Picture" title="Profile Picture">
-    <h1>Hello There</h1>
-    <h2>Tanishq this side!</h2>
-    <p>I am final year undergraduate of Computer Science and Engineering at LCIT.
-       <br>
-        My main tech stacks include Python, streamlit, Tensorflow, Keras, MatplotLib, Pandas, Numpy, etc.
-        <br>
-        I've also worked with technologies like Git, Docker, Kubernetes, and AWS.     
-    </p>
-    <h3>Find me Online</h3>
-    
-    <a href ="https://github.com/tvnisxq" target="_blank" title="GitHub">
-        <img src="github.svg" width="32" height="32" alt="GitHub" style="margin-right: 10px;">
-    </a>
-    
-    <a href="https://linkedin.com/in/tvnisxq" target="_blank" title="LinkedIn">
-    <img src="linkedin.svg" width="32" height="32" alt="LinkedIn" style="margin-right: 10px"></a>
+    <!-- <img> shows an image. It has no closing tag.
+         class="cover" -> lets the CSS above target this image.
+         src           -> the file to load (must be in the same folder).
+         alt           -> text shown if the image fails to load, and read aloud by screen readers. -->
+    <img class="cover" src="cover.jpeg" alt="Tanishq Sharma - AI & ML Developer, Content Creator">
 
-    <a href ="https://youtube.com/@tensharq" target="_blank" title="YouTube">
-        <img src="youtube.svg.webp" width="38" height="32" alt="YouTube" style="margin-right: 10px;">
-    </a>
+    <!-- <div> is a generic box, used to group elements so you can style them together. -->
+    <div class="content">
+        <!-- <h1> is the main heading. Use only one per page. <h2>, <h3>... are smaller subheadings. -->
+        <h1>Hello There!</h1>
+        <h2>Tanishq </h2>
 
-    
+        <!-- <p> is a paragraph. <br> forces a line break (also has no closing tag). -->
+        <p>
+            I am a Comp Sci Grad who has worked in AI, ML, WebDev, Big Data Technologeis and Cloud Infrastructure.
+            <br>
+            My area of expertise include Python, Streamlit, TensorFlow, PyTorch, LangChain, LangGraph, Vector BDs, RAG, LLM Orchestration.
+            <br>
+            I've also worked with technologies like Git, Docker, Kubernetes, and AWS.
+        </p>
+
+        <h3>Find me Online</h3>
+
+        <!-- This div uses the .socials class, so its links become a centered flex row. -->
+        <div class="socials">
+            <!-- <a> makes a link.
+                 href            -> where it goes.
+                 target="_blank" -> open in a new tab.
+                 title           -> tooltip shown when hovering.
+                 The <img> inside the <a> makes the icon itself clickable. -->
+            <a href="https://github.com/tvnisxq" target="_blank" title="GitHub">
+                <img src="github.svg" alt="GitHub">
+            </a>
+
+            <a href="https://linkedin.com/in/tvnisxq" target="_blank" title="LinkedIn">
+                <img src="linkedin.svg" alt="LinkedIn">
+            </a>
+
+            <a href="https://youtube.com/@tensharq" target="_blank" title="YouTube">
+                <img src="youtube.svg.webp" alt="YouTube">
+            </a>
+        </div> <!-- closes .socials -->
+    </div> <!-- closes .content -->
 </body>
-</html> 
+</html>
