@@ -84,6 +84,23 @@
         a {
             text-decoration: none;
         }
+
+        html { scroll-behavior: smooth; }      /* Animated scroll when clicking # links */
+
+        .nav {
+            position: sticky;                  /* Sticks to the top while scrolling */
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding: 14px;
+            background: #000000;               /* Dark green to match the cover */
+        }
+        .nav a { color: #f4f4f4; }
+        .nav a:hover { text-decoration: underline; }
+
+        
+
     </style>
 </head>
 
@@ -98,6 +115,7 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    
     <!-- <img> shows an image. It has no closing tag.
          class="cover" -> lets the CSS above target this image.
          src           -> the file to load (must be in the same folder).
