@@ -99,7 +99,25 @@
         .nav a { color: #f4f4f4; }
         .nav a:hover { text-decoration: underline; }
 
-        
+                /* ===== Skills badges ===== */
+        .skills {
+            list-style: none;              /* Removes the bullet points */
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;               /* Badges drop to the next line when out of room */
+            justify-content: center;
+            gap: 10px;
+        }
+        .skills li {
+            background: #000000;
+            color: #f4f4f4;
+            padding: 6px 14px;
+            border-radius: 999px;          /* Huge radius = pill shape */
+            font-size: 0.9rem;
+        }
+
+
+
 
     </style>
 </head>
@@ -160,6 +178,60 @@
                 </a>
             </div> <!-- closes .socials -->
         </section>
+
+        <section id="skills">
+            <h3>Skills</h3>
+            <ul class="skills">
+                <li>Python</li>
+                <li>PyTorch</li>
+                <li>TensorFlow</li>
+                <li>LangChain</li>
+                <li>LangGraph</li>
+                <li>RAG</li>
+                <li>Chroma DB</li>
+                <li>Pinecone DB</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>AWS</li>
+                <li>Hadoop Ecosystem</li>
+                <li>PySpark</li>
+                <li>SQL</li>
+                <li>MongoDB</li>
+                <li>Cassandra</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section> <!-- closes #skills -->
+
+
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="projects">
+
+                <div class="card">
+                    <h4>LegalAdvisor</h4>
+                    <p>One or two lines on what it does and the tech you used.</p>
+                    <a href="https://github.com/tvnisxq/LegalAdvisor" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="card">
+                    <h4>LangVid</h4>
+                    <p>Turn any video or meeting recording into a transcript, summary, action items, and a chat partner — powered by LLMs and RAG.</p>
+                    <a href="https://github.com/tvnisxq/LangVid" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="card">
+                    <h4>ContentAlchemist</h4>
+                    <p>One or two lines on what it does and the tech you used.</p>
+                    <a href="https://github.com/tvnisxq/contentAlchemist" target="_blank">View on GitHub →</a>
+                </div>
+
+            </div>
+        </section>
+
+    </div> <!-- closes .content -->
+
+
     </div> <!-- closes .content -->
 </body>
 </html>
