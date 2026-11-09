@@ -116,7 +116,24 @@
             font-size: 0.9rem;
         }
 
-
+        .projects {
+            display: grid;
+            /* As many columns as fit, each at least 220px wide, sharing leftover space equally.
+            This makes the layout responsive with no media queries. */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.35);   /* Semi-transparent white over the tan */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-6px); }
+        .card h4 { margin: 0 0 8px; color: #004d26; }
+        .card a { color: #004d26; font-weight: bold; }
 
 
     </style>
@@ -149,7 +166,7 @@
 
             <!-- <p> is a paragraph. <br> forces a line break (also has no closing tag). -->
             <p>
-                I am a Comp Sci Grad who has worked in AI, ML, WebDev, Big Data Technologeis and Cloud Infrastructure.
+                I am a Comp. Sci. Grad who has worked in AI, ML, WebDev, Big Data Technologeis and Cloud Infrastructure.
                 <br>
                 My area of expertise include Python, Streamlit, TensorFlow, PyTorch, LangChain, LangGraph, Vector BDs, RAG, LLM Orchestration.
                 <br>
@@ -186,6 +203,8 @@
                 <li>PyTorch</li>
                 <li>TensorFlow</li>
                 <li>LangChain</li>
+                <li>LLM Integration</li>
+                <li>LLM Integration</li>
                 <li>LangGraph</li>
                 <li>RAG</li>
                 <li>Chroma DB</li>
@@ -195,11 +214,12 @@
                 <li>AWS</li>
                 <li>Hadoop Ecosystem</li>
                 <li>PySpark</li>
+                <li>Kafka</li>
                 <li>SQL</li>
                 <li>MongoDB</li>
                 <li>Cassandra</li>
-                <li></li>
-                <li></li>
+                <li>Git</li>
+                <li>GitHub</li>
             </ul>
         </section> <!-- closes #skills -->
 
@@ -210,13 +230,13 @@
 
                 <div class="card">
                     <h4>LegalAdvisor</h4>
-                    <p>One or two lines on what it does and the tech you used.</p>
+                    <p>Retrieval-augmented legal Q&A system.</p>
                     <a href="https://github.com/tvnisxq/LegalAdvisor" target="_blank">View on GitHub →</a>
                 </div>
 
                 <div class="card">
                     <h4>LangVid</h4>
-                    <p>Turn any video or meeting recording into a transcript, summary, action items, and a chat partner — powered by LLMs and RAG.</p>
+                    <p>Turn any video or meeting recording into a transcript, summary, action items, and a chat partner</p>
                     <a href="https://github.com/tvnisxq/LangVid" target="_blank">View on GitHub →</a>
                 </div>
 
